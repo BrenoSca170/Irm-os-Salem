@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <!-- =========================================================
+       IRMÃOS SALEM — Produtos Naturais e Suplementos
+       Landing Page de alta conversão | Vila Carrão - Zona Leste SP
+       Stack: HTML5 semântico + Tailwind CSS (CDN) + Vanilla JS
+       ========================================================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Irmãos Salem | Produtos Naturais, Granel e Suplementos em Vila Carrão - Zona Leste SP</title>
+  <meta name="description" content="Produtos naturais a granel, castanhas frescas, chás e suplementos 100% originais na Vila Carrão, Zona Leste de SP. Peça pelo WhatsApp e receba no mesmo dia, sem taxas de aplicativo." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="keywords" content="loja de produtos naturais Vila Carrão, suplementos Zona Leste, granel Aricanduva, castanhas, whey protein, creatina, chás, empório natural" />
+  <meta name="theme-color" content="#1B4332" />
+
+  <!-- SEO Local / Geo -->
+  <meta name="geo.region" content="BR-SP" />
+  <meta name="geo.placename" content="Vila Carrão, São Paulo - SP" />
+  <meta name="geo.position" content="-23.5536;-46.5383" />
+  <meta name="ICBM" content="-23.5536, -46.5383" />
+  <link rel="canonical" href="https://www.irmaossalem.com.br/" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Irmãos Salem | Produtos Naturais e Suplementos na Vila Carrão" />
+  <meta property="og:description" content="Granel, castanhas frescas, chás e suplementos originais. Peça no WhatsApp e receba no mesmo dia na Zona Leste." />
+  <meta property="og:url" content="https://www.irmaossalem.com.br/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Schema.org: LocalBusiness / HealthFoodStore -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthFoodStore",
+    "name": "Irmãos Salem Produtos Naturais e Suplementos",
+    "description": "Loja de produtos naturais, granel, castanhas, chás e suplementos esportivos na Vila Carrão, Zona Leste de São Paulo.",
+    "url": "https://www.irmaossalem.com.br/",
+    "telephone": "+55-11-99999-9999",
+    "priceRange": "$$",
+    "image": "https://www.irmaossalem.com.br/og-image.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Conselheiro Carrão, 1234",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "postalCode": "03402-000",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.5536,
+      "longitude": -46.5383
+    },
+    "areaServed": ["Vila Carrão", "Aricanduva", "Tatuapé", "Vila Formosa", "Penha", "Zona Leste de São Paulo"],
+    "openingHours": ["Mo-Fr 08:00-19:00", "Sa 08:00-14:00"],
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "14:00" }
+    ],
+    "paymentAccepted": "Pix, Cartão de Crédito, Cartão de Débito, Dinheiro",
+    "currenciesAccepted": "BRL",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "187" }
+  }
+  </script>
+
+  <!-- Fontes (preconnect para performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS (CDN) + tema da marca -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: { DEFAULT: '#1B4332', 600: '#2D6A4F', 400: '#40916C', 100: '#D8F3DC', 50: '#EEF7F0' },
+            amber:  { DEFAULT: '#DDA15E', 600: '#BC8A4F', 100: '#F8EBDA' },
+            paper:  '#F8F9FA',
+            wa:     { DEFAULT: '#25D366', dark: '#1DA851' }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['Fraunces', 'Georgia', 'serif']
+          },
+          boxShadow: {
+            soft: '0 10px 30px -12px rgba(27,67,50,.25)',
+            wa: '0 10px 25px -8px rgba(37,211,102,.6)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Tipografia fluida (escala com a largura da tela) */
+    .fs-hero { font-size: clamp(1.85rem, 5.2vw + .6rem, 3.6rem); line-height: 1.08; }
+    .fs-h2   { font-size: clamp(1.6rem, 3vw + .7rem, 2.6rem); line-height: 1.15; }
+    .fs-lead { font-size: clamp(1rem, .6vw + .9rem, 1.2rem); }
+
+    /* Scroll horizontal das abas sem barra visível */
+    .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+
+    /* Botão flutuante: anel pulsante */
+    @keyframes pulse-ring { 0% { transform: scale(.9); opacity: .7; } 80%,100% { transform: scale(1.6); opacity: 0; } }
+    .pulse-ring::before, .pulse-ring::after {
+      content: ''; position: absolute; inset: 0; border-radius: 9999px; background: #25D366;
+      animation: pulse-ring 2s cubic-bezier(.2,.6,.4,1) infinite; z-index: -1;
+    }
+    .pulse-ring::after { animation-delay: 1s; }
+
+    /* Entrada suave dos cards ao filtrar */
+    @keyframes card-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    .card-in { animation: card-in .35s ease both; }
+
+    /* Textura sutil no hero */
+    .hero-pattern {
+      background-image:
+        radial-gradient(circle at 15% 20%, rgba(221,161,94,.18) 0, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(64,145,108,.35) 0, transparent 45%);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-paper font-sans text-slate-800 antialiased">
+
+  <!-- Sprite de ícones SVG reutilizáveis (evita repetição e requisições extras) -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="hidden" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.93.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.01c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 9.44 9.45c0 5.2-4.24 9.43-9.46 9.43m8.04-17.48A11.3 11.3 0 0 0 12.05.7C5.8.7.7 5.8.7 12.07c0 2 .52 3.95 1.52 5.67L.6 23.6l6.01-1.58a11.3 11.3 0 0 0 5.43 1.38h.01c6.26 0 11.35-5.1 11.36-11.36 0-3.03-1.18-5.89-3.32-8.03"/></symbol>
+    <symbol id="i-star" viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.5l2.6 5.3 5.9.9-4.25 4.1 1 5.85L10 14.9l-5.25 2.75 1-5.85L1.5 7.7l5.9-.9z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.2-7-11.5a7 7 0 1 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  </svg>
+
+  <!-- Link de acessibilidade -->
+  <a href="#catalogo" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:rounded-lg">Pular para o catálogo</a>
+
+  <!-- ================= 1. TOP BAR ================= -->
+  <div class="bg-amber text-forest text-center text-[13px] sm:text-sm font-semibold px-4 py-2.5 leading-snug">
+    🛵 Pediu pelo WhatsApp, chegou no mesmo dia na região! <span class="whitespace-nowrap">Sem taxas de aplicativos terceiros.</span>
+  </div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="sticky top-0 z-40 bg-forest/95 backdrop-blur supports-[backdrop-filter]:bg-forest/85 text-white">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-3 px-4 h-16">
+      <a href="#topo" class="flex items-center gap-2.5 min-h-[48px]" aria-label="Irmãos Salem - Início">
+        <span class="grid place-items-center w-10 h-10 rounded-full bg-amber text-forest font-display font-bold text-lg">IS</span>
+        <span class="leading-tight">
+          <span class="block font-display font-bold text-lg">Irmãos Salem</span>
+          <span class="block text-[11px] text-forest-100/80 tracking-wide uppercase">Naturais & Suplementos</span>
+        </span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-white/85" aria-label="Navegação principal">
+        <a href="#catalogo" class="hover:text-amber transition">Catálogo</a>
+        <a href="#avaliacoes" class="hover:text-amber transition">Avaliações</a>
+        <a href="#localizacao" class="hover:text-amber transition">Como chegar</a>
+      </nav>
+      <a data-wa="geral" href="#" target="_blank" rel="noopener" aria-label="Pedir agora pelo WhatsApp"
+         class="inline-flex items-center justify-center gap-2 bg-wa hover:bg-wa-dark text-white font-bold text-sm px-4 min-h-[48px] min-w-[48px] rounded-full transition shadow-wa">
+        <svg class="w-5 h-5" aria-hidden="true"><use href="#i-wa"/></svg>
+        <span class="hidden sm:inline">Pedir agora</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- ================= 2. HERO ================= -->
+    <section class="relative bg-forest text-white overflow-hidden" aria-labelledby="hero-title">
+      <div class="absolute inset-0 hero-pattern" aria-hidden="true"></div>
+      <div class="relative max-w-6xl mx-auto px-4 pt-10 pb-14 md:pt-16 md:pb-20 grid md:grid-cols-[1.25fr_1fr] gap-10 items-center">
+        <div>
+          <p class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-3 py-1.5 text-xs sm:text-sm font-medium mb-5">
+            <svg class="w-4 h-4 text-amber" aria-hidden="true"><use href="#i-pin"/></svg>
+            Vila Carrão · Aricanduva · Zona Leste SP
+          </p>
+          <h1 id="hero-title" class="fs-hero font-display font-bold tracking-tight">
+            Sua Saúde e Performance no Bairro: <span class="text-amber">Produtos Naturais a Granel</span> e Suplementos Originais sem Frete Abusivo
+          </h1>
+          <p class="fs-lead text-white/85 mt-5 max-w-xl">
+            Castanhas frescas, chás selecionados e as melhores marcas de suplementação esportiva na Vila Carrão. Faça seu pedido direto no WhatsApp e receba em casa.
+          </p>
+
+          <!-- Badges de confiança -->
+          <ul class="flex flex-wrap gap-2 mt-6 text-xs sm:text-sm font-semibold" aria-label="Diferenciais">
+            <li class="inline-flex items-center gap-1.5 bg-white text-forest rounded-full px-3 py-2"><svg class="w-4 h-4 text-forest-400" aria-hidden="true"><use href="#i-check"/></svg>Produtos 100% Originais</li>
+            <li class="inline-flex items-center gap-1.5 bg-white text-forest rounded-full px-3 py-2"><svg class="w-4 h-4 text-forest-400" aria-hidden="true"><use href="#i-check"/></svg>Entrega no Mesmo Dia</li>
+            <li class="inline-flex items-center gap-1.5 bg-white text-forest rounded-full px-3 py-2"><svg class="w-4 h-4 text-forest-400" aria-hidden="true"><use href="#i-check"/></svg>Preço de Balcão Sem Taxas</li>
+          </ul>
+
+          <!-- CTA principal -->
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a data-wa="geral" href="#" target="_blank" rel="noopener"
+               class="group inline-flex items-center justify-center gap-3 bg-wa hover:bg-wa-dark text-white font-extrabold text-lg px-7 min-h-[58px] rounded-2xl shadow-wa transition active:scale-[.98]">
+              <svg class="w-7 h-7" aria-hidden="true"><use href="#i-wa"/></svg>
+              Fazer meu pedido no WhatsApp
+            </a>
+            <a href="#catalogo" class="inline-flex items-center justify-center gap-2 border border-white/30 hover:bg-white/10 font-semibold px-6 min-h-[58px] rounded-2xl transition">
+              Ver produtos <svg class="w-5 h-5" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+          <p class="mt-4 text-sm text-white/70 flex items-center gap-2">
+            <span class="flex text-amber" aria-hidden="true"><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg></span>
+            5.0 no Google · Resposta em minutos
+          </p>
+        </div>
+
+        <!-- Visual do hero (composição leve, sem imagem pesada) -->
+        <div class="relative hidden sm:block" aria-hidden="true">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-3xl bg-gradient-to-br from-amber-100 to-amber p-6 aspect-square grid place-items-center text-7xl shadow-soft rotate-[-3deg]">🥜</div>
+            <div class="rounded-3xl bg-gradient-to-br from-forest-100 to-forest-400 p-6 aspect-square grid place-items-center text-7xl shadow-soft translate-y-6 rotate-[3deg]">💪</div>
+            <div class="rounded-3xl bg-gradient-to-br from-forest-50 to-forest-100 p-6 aspect-square grid place-items-center text-7xl shadow-soft rotate-[2deg]">🍵</div>
+            <div class="rounded-3xl bg-gradient-to-br from-white to-amber-100 p-6 aspect-square grid place-items-center text-7xl shadow-soft translate-y-6 rotate-[-2deg]">🌾</div>
+          </div>
+          <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white text-forest rounded-2xl shadow-soft px-5 py-3 text-sm font-bold whitespace-nowrap">
+            +400 produtos na loja física
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. SEGMENTAÇÃO DUPLA ================= -->
+    <section class="max-w-6xl mx-auto px-4 -mt-6 md:-mt-8 relative z-10" aria-label="Escolha seu objetivo">
+      <div class="grid md:grid-cols-2 gap-4">
+        <button type="button" data-goto="suplementos"
+          class="group text-left rounded-3xl p-6 md:p-8 bg-gradient-to-br from-forest-600 to-forest text-white shadow-soft hover:-translate-y-1 transition min-h-[48px] focus:outline-none focus-visible:ring-4 focus-visible:ring-amber">
+          <span class="text-4xl" aria-hidden="true">🏋️</span>
+          <h2 class="font-display font-bold text-2xl mt-3">Performance & Treino</h2>
+          <p class="text-white/80 mt-1">Whey, Creatina, Pré-treino, Hipercalóricos.</p>
+          <span class="inline-flex items-center gap-2 mt-5 font-semibold text-amber">Ver suplementos <svg class="w-5 h-5 group-hover:translate-x-1 transition" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </button>
+        <button type="button" data-goto="granel"
+          class="group text-left rounded-3xl p-6 md:p-8 bg-gradient-to-br from-amber-100 to-[#EBCB9F] text-forest shadow-soft hover:-translate-y-1 transition min-h-[48px] focus:outline-none focus-visible:ring-4 focus-visible:ring-forest-400">
+          <span class="text-4xl" aria-hidden="true">🌿</span>
+          <h2 class="font-display font-bold text-2xl mt-3">Saúde, Granel & Bem-Estar</h2>
+          <p class="text-forest/75 mt-1">Castanhas selecionadas, chás, colágeno, farinhas integrais.</p>
+          <span class="inline-flex items-center gap-2 mt-5 font-semibold text-forest-600">Ver granel e naturais <svg class="w-5 h-5 group-hover:translate-x-1 transition" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ================= 4. CATÁLOGO ================= -->
+    <section id="catalogo" class="max-w-6xl mx-auto px-4 pt-16 md:pt-20 scroll-mt-20" aria-labelledby="catalogo-title">
+      <div class="text-center max-w-2xl mx-auto">
+        <p class="text-amber-600 font-bold uppercase tracking-widest text-xs">Catálogo rápido</p>
+        <h2 id="catalogo-title" class="fs-h2 font-display font-bold text-forest mt-2">Escolha, toque e peça. Simples assim.</h2>
+        <p class="text-slate-600 mt-3">Sem cadastro, sem carrinho. Toque em “Pedir no WhatsApp” e a gente separa pra você.</p>
+      </div>
+
+      <!-- Abas de filtro (scroll lateral no mobile) -->
+      <div class="relative mt-8 -mx-4 md:mx-0">
+        <div id="tabs" role="tablist" aria-label="Categorias de produtos"
+             class="no-scrollbar flex gap-2 overflow-x-auto snap-x snap-mandatory px-4 md:px-0 md:justify-center pb-2 scroll-smooth">
+          <!-- Abas geradas via JS -->
+        </div>
+        <div class="pointer-events-none absolute right-0 top-0 bottom-2 w-10 bg-gradient-to-l from-paper md:hidden" aria-hidden="true"></div>
+      </div>
+
+      <!-- Grid de produtos -->
+      <div id="product-grid" role="tabpanel" aria-live="polite"
+           class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mt-6"></div>
+
+      <!-- Bloco: mais de 400 produtos -->
+      <div class="mt-10 rounded-3xl bg-forest-50 border border-forest-100 p-6 md:p-10 flex flex-col md:flex-row items-center gap-6 md:justify-between text-center md:text-left">
+        <div>
+          <h3 class="font-display font-bold text-forest text-2xl">Procurando outro item?</h3>
+          <p class="text-slate-600 mt-1">Temos <strong class="text-forest">mais de 400 produtos</strong> na loja física. Se não está aqui, provavelmente está na prateleira.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+          <a data-wa="atendente" href="#" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center gap-2 bg-wa hover:bg-wa-dark text-white font-bold px-6 min-h-[52px] rounded-xl shadow-wa transition">
+            <svg class="w-5 h-5" aria-hidden="true"><use href="#i-wa"/></svg> Falar com Atendente
+          </a>
+          <a data-wa="lista" href="#" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center gap-2 bg-white border-2 border-forest text-forest hover:bg-forest hover:text-white font-bold px-6 min-h-[52px] rounded-xl transition">
+            Consultar Lista Completa
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. PROVA SOCIAL ================= -->
+    <section id="avaliacoes" class="max-w-6xl mx-auto px-4 pt-16 md:pt-24 scroll-mt-20" aria-labelledby="avaliacoes-title">
+      <div class="grid lg:grid-cols-[1fr_2fr] gap-6 items-start">
+        <!-- Card Google -->
+        <div class="rounded-3xl bg-white shadow-soft p-6 md:p-8 lg:sticky lg:top-24">
+          <div class="flex items-center gap-2 text-sm font-semibold text-slate-500">
+            <svg class="w-5 h-5" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+            Avaliações no Google
+          </div>
+          <p class="font-display font-bold text-6xl text-forest mt-4">5.0</p>
+          <div class="flex text-amber mt-1" aria-label="5 de 5 estrelas">
+            <svg class="w-6 h-6"><use href="#i-star"/></svg><svg class="w-6 h-6"><use href="#i-star"/></svg><svg class="w-6 h-6"><use href="#i-star"/></svg><svg class="w-6 h-6"><use href="#i-star"/></svg><svg class="w-6 h-6"><use href="#i-star"/></svg>
+          </div>
+          <p class="text-slate-600 mt-3">Baseado em <strong>187 avaliações</strong> de clientes da Vila Carrão, Aricanduva, Tatuapé e Vila Formosa.</p>
+          <h2 id="avaliacoes-title" class="font-display font-bold text-forest text-2xl mt-6">O bairro aprova.</h2>
+        </div>
+
+        <!-- Depoimentos -->
+        <div class="grid sm:grid-cols-2 gap-4">
+          <article class="rounded-3xl bg-white border border-slate-100 p-6">
+            <div class="flex text-amber" aria-label="5 estrelas"><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg></div>
+            <p class="mt-3 text-slate-700">“Fui comprar creatina e saí com uma aula. O pessoal explicou a diferença entre as marcas, como tomar e não empurrou o mais caro. Atendimento de quem entende de verdade.”</p>
+            <footer class="mt-4 flex items-center gap-3">
+              <span class="grid place-items-center w-10 h-10 rounded-full bg-forest-100 text-forest font-bold">RM</span>
+              <span class="text-sm"><strong class="block text-forest">Rafael M.</strong><span class="text-slate-500">Vila Carrão · há 2 semanas</span></span>
+            </footer>
+          </article>
+          <article class="rounded-3xl bg-white border border-slate-100 p-6 sm:translate-y-6">
+            <div class="flex text-amber" aria-label="5 estrelas"><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg></div>
+            <p class="mt-3 text-slate-700">“As castanhas são sempre fresquinhas, nada de gosto de ranço como em mercado. Peço pelo WhatsApp toda semana e chega em casa no mesmo dia, bem embalado.”</p>
+            <footer class="mt-4 flex items-center gap-3">
+              <span class="grid place-items-center w-10 h-10 rounded-full bg-amber-100 text-amber-600 font-bold">CS</span>
+              <span class="text-sm"><strong class="block text-forest">Cláudia S.</strong><span class="text-slate-500">Aricanduva · há 1 mês</span></span>
+            </footer>
+          </article>
+          <article class="rounded-3xl bg-white border border-slate-100 p-6 sm:col-span-2 sm:mt-6">
+            <div class="flex text-amber" aria-label="5 estrelas"><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg></div>
+            <p class="mt-3 text-slate-700">“Comparei o preço do whey com os apps e aqui saiu mais barato, sem frete e com nota. Produto original, lacrado. Virei cliente fixo, recomendo pra todo mundo da academia.”</p>
+            <footer class="mt-4 flex items-center gap-3">
+              <span class="grid place-items-center w-10 h-10 rounded-full bg-forest-100 text-forest font-bold">JP</span>
+              <span class="text-sm"><strong class="block text-forest">Juliana P.</strong><span class="text-slate-500">Tatuapé · há 3 semanas</span></span>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. LOCALIZAÇÃO ================= -->
+    <section id="localizacao" class="max-w-6xl mx-auto px-4 pt-20 md:pt-28 pb-16 scroll-mt-20" aria-labelledby="local-title">
+      <div class="rounded-3xl overflow-hidden bg-white shadow-soft grid lg:grid-cols-2">
+        <div class="p-6 md:p-10">
+          <p class="text-amber-600 font-bold uppercase tracking-widest text-xs">Visite a loja</p>
+          <h2 id="local-title" class="fs-h2 font-display font-bold text-forest mt-2">Pertinho de você, na Vila Carrão</h2>
+
+          <address class="not-italic mt-6 space-y-5">
+            <div class="flex gap-3">
+              <span class="grid place-items-center w-11 h-11 shrink-0 rounded-xl bg-forest-50 text-forest"><svg class="w-5 h-5" aria-hidden="true"><use href="#i-pin"/></svg></span>
+              <p><strong class="text-forest block">Endereço</strong>Av. Conselheiro Carrão, 1234 – Vila Carrão<br />São Paulo – SP · CEP 03402-000</p>
+            </div>
+            <div class="flex gap-3">
+              <span class="grid place-items-center w-11 h-11 shrink-0 rounded-xl bg-forest-50 text-forest"><svg class="w-5 h-5" aria-hidden="true"><use href="#i-clock"/></svg></span>
+              <div>
+                <strong class="text-forest block">Horário de funcionamento</strong>
+                <ul class="text-slate-700">
+                  <li>Segunda a Sexta: <strong>08h às 19h</strong></li>
+                  <li>Sábado: <strong>08h às 14h</strong></li>
+                  <li class="text-slate-500">Domingo e feriados: fechado</li>
+                </ul>
+                <p id="open-status" class="mt-2 inline-flex items-center gap-2 text-sm font-semibold rounded-full px-3 py-1"></p>
+              </div>
+            </div>
+          </address>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a id="btn-gmaps" href="#" target="_blank" rel="noopener"
+               class="inline-flex items-center justify-center gap-2 bg-forest hover:bg-forest-600 text-white font-bold px-6 min-h-[52px] rounded-xl transition">
+              <svg class="w-5 h-5" aria-hidden="true"><use href="#i-pin"/></svg> Traçar Rota no Google Maps
+            </a>
+            <a id="btn-waze" href="#" target="_blank" rel="noopener"
+               class="inline-flex items-center justify-center gap-2 bg-[#33CCFF] hover:brightness-95 text-slate-900 font-bold px-6 min-h-[52px] rounded-xl transition">
+              🚗 Abrir no Waze
+            </a>
+          </div>
+        </div>
+        <div class="min-h-[320px] lg:min-h-full bg-forest-50">
+          <iframe
+            title="Mapa: Irmãos Salem na Vila Carrão, Zona Leste de São Paulo"
+            src="https://maps.google.com/maps?q=Av.%20Conselheiro%20Carr%C3%A3o%2C%20Vila%20Carr%C3%A3o%2C%20S%C3%A3o%20Paulo&z=15&output=embed"
+            class="w-full h-full min-h-[320px] border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= 7. RODAPÉ ================= -->
+  <footer class="bg-forest text-white/80 pb-24 md:pb-10">
+    <div class="max-w-6xl mx-auto px-4 pt-12 grid gap-8 md:grid-cols-3">
+      <div>
+        <p class="font-display font-bold text-white text-xl">Irmãos Salem</p>
+        <p class="mt-2 text-sm">Produtos naturais, granel e suplementos originais. Atendimento de família, com a qualidade que a Zona Leste merece.</p>
+      </div>
+      <div class="text-sm">
+        <p class="font-semibold text-white">Contato & Endereço</p>
+        <p class="mt-2">Av. Conselheiro Carrão, 1234 – Vila Carrão, São Paulo – SP, 03402-000</p>
+        <p class="mt-1">WhatsApp: <a data-wa="geral" href="#" target="_blank" rel="noopener" class="underline hover:text-amber">(11) 99999-9999</a></p>
+        <p class="mt-1">Seg–Sex 08h–19h · Sáb 08h–14h</p>
+      </div>
+      <div class="text-sm">
+        <p class="font-semibold text-white">Formas de pagamento</p>
+        <ul class="mt-3 flex flex-wrap gap-2" aria-label="Formas de pagamento aceitas">
+          <li class="bg-white/10 border border-white/15 rounded-lg px-3 py-1.5">💠 Pix</li>
+          <li class="bg-white/10 border border-white/15 rounded-lg px-3 py-1.5">💳 Crédito</li>
+          <li class="bg-white/10 border border-white/15 rounded-lg px-3 py-1.5">💳 Débito</li>
+          <li class="bg-white/10 border border-white/15 rounded-lg px-3 py-1.5">💵 Dinheiro</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 mt-10 pt-6 border-t border-white/10 text-xs text-white/60 flex flex-col sm:flex-row gap-2 justify-between">
+      <p>© <span id="year"></span> Irmãos Salem Produtos Naturais e Suplementos. Todos os direitos reservados.</p>
+      <p>Imagens meramente ilustrativas. Preços sujeitos a alteração.</p>
+    </div>
+  </footer>
+
+  <!-- ================= BOTÃO FLUTUANTE WHATSAPP ================= -->
+  <a data-wa="flutuante" href="#" target="_blank" rel="noopener" aria-label="Tirar dúvida pelo WhatsApp"
+     class="pulse-ring fixed z-50 bottom-5 right-5 md:bottom-7 md:right-7 isolate grid place-items-center w-16 h-16 rounded-full bg-wa text-white shadow-wa hover:scale-105 transition"
+     style="margin-bottom: env(safe-area-inset-bottom);">
+    <svg class="w-9 h-9" aria-hidden="true"><use href="#i-wa"/></svg>
+  </a>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+  (() => {
+    'use strict';
+
+    /* ---------- Configuração central (edite aqui) ---------- */
+    const CONFIG = {
+      whatsapp: '5511999999999',
+      lat: -23.5536,
+      lng: -46.5383,
+      address: 'Av. Conselheiro Carrão, 1234 - Vila Carrão, São Paulo - SP, 03402-000'
+    };
+
+    /* Mensagens pré-definidas por tipo de CTA */
+    const MESSAGES = {
+      geral:      'Olá! Vi no site da Irmãos Salem e gostaria de fazer um pedido.',
+      atendente:  'Olá! Vi no site da Irmãos Salem e estou procurando um produto que não encontrei no catálogo.',
+      lista:      'Olá! Vi no site da Irmãos Salem e gostaria de receber a lista completa de produtos.',
+      flutuante:  'Olá! Gostaria de tirar uma dúvida sobre os produtos da Irmãos Salem'
+    };
+
+    /** Gera link wa.me com texto codificado em URL */
+    const waLink = (text) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
+
+    /** Link parametrizado do produto (regra solicitada) */
+    const productLink = (name) => waLink(`Olá! Vi no site da Irmãos Salem e gostaria de pedir: ${name}`);
+
+    /* ---------- Abas / categorias ---------- */
+    const TABS = [
+      { id: 'mais-pedidos', label: '🔥 Mais Pedidos' },
+      { id: 'suplementos',  label: '💪 Suplementos' },
+      { id: 'granel',       label: '🥜 Granel & Castanhas' },
+      { id: 'chas',         label: '🌿 Chás & Ervas' },
+      { id: 'saudaveis',    label: '🍃 Saudáveis & Zero' }
+    ];
+
+    /* ---------- Produtos de demonstração ----------
+       cat: categoria principal | top: aparece em "Mais Pedidos"
+       bg: gradiente do placeholder | tagStyle: cor da etiqueta */
+    const TAG = {
+      hot:   'bg-red-500 text-white',
+      fresh: 'bg-forest-400 text-white',
+      gold:  'bg-amber text-forest',
+      pure:  'bg-white text-forest border border-forest-100'
+    };
+
+    const PRODUCTS = [
+      { name: 'Creatina Monohidratada 300g', spec: 'Pote 300g · 100% pura', price: 'R$ 89,90', cat: 'suplementos', top: true, emoji: '⚡', tag: 'Mais Vendido', tagStyle: TAG.hot, bg: 'from-slate-100 to-slate-300' },
+      { name: 'Whey Protein Concentrado 900g', spec: 'Pote 900g · Baunilha / Chocolate', price: 'R$ 129,90', cat: 'suplementos', top: true, emoji: '🥛', tag: 'Original Lacrado', tagStyle: TAG.gold, bg: 'from-forest-50 to-forest-100' },
+      { name: 'Pré-Treino Explosive 300g', spec: 'Pote 300g · Frutas vermelhas', price: 'R$ 99,90', cat: 'suplementos', emoji: '🔋', tag: 'Energia', tagStyle: TAG.hot, bg: 'from-rose-50 to-rose-200' },
+      { name: 'Hipercalórico Mass 3kg', spec: 'Pacote 3kg · Chocolate', price: 'R$ 119,90', cat: 'suplementos', emoji: '🏋️', tag: 'Ganho de Massa', tagStyle: TAG.gold, bg: 'from-amber-100 to-[#EBCB9F]' },
+      { name: 'Castanha-do-Pará Média', spec: 'R$ 8,50 / 100g', price: 'A granel', cat: 'granel', top: true, emoji: '🌰', tag: 'Fresco da Semana', tagStyle: TAG.fresh, bg: 'from-amber-100 to-amber' },
+      { name: 'Castanha de Caju W1 Torrada', spec: 'R$ 9,90 / 100g', price: 'A granel', cat: 'granel', emoji: '🥜', tag: 'Fresco da Semana', tagStyle: TAG.fresh, bg: 'from-[#FDF3E3] to-amber-100' },
+      { name: 'Mix de Castanhas Premium', spec: 'R$ 7,90 / 100g', price: 'A granel', cat: 'granel', top: true, emoji: '🫘', tag: 'Mais Vendido', tagStyle: TAG.hot, bg: 'from-amber-100 to-[#E9C08F]' },
+      { name: 'Farinha de Amêndoas', spec: 'R$ 6,90 / 100g', price: 'A granel', cat: 'granel', emoji: '🌾', tag: 'Low Carb', tagStyle: TAG.pure, bg: 'from-[#FBF7EF] to-[#EFE2C8]' },
+      { name: 'Chá de Hibisco Desidratado', spec: 'R$ 5,50 / 50g', price: 'A granel', cat: 'chas', top: true, emoji: '🌺', tag: '100% Pura', tagStyle: TAG.pure, bg: 'from-rose-100 to-rose-300' },
+      { name: 'Camomila Flor Selecionada', spec: 'R$ 4,90 / 50g', price: 'A granel', cat: 'chas', emoji: '🌼', tag: 'Calmante', tagStyle: TAG.fresh, bg: 'from-yellow-50 to-yellow-200' },
+      { name: 'Chá Verde Folhas', spec: 'R$ 4,50 / 50g', price: 'A granel', cat: 'chas', emoji: '🍵', tag: '100% Pura', tagStyle: TAG.pure, bg: 'from-forest-50 to-forest-100' },
+      { name: 'Colágeno Verisol 300g', spec: 'Pote 300g · Sem sabor', price: 'R$ 79,90', cat: 'saudaveis', top: true, emoji: '✨', tag: 'Pele & Articulações', tagStyle: TAG.gold, bg: 'from-pink-50 to-amber-100' },
+      { name: 'Pasta de Amendoim Zero Açúcar 1kg', spec: 'Pote 1kg · Integral', price: 'R$ 34,90', cat: 'saudaveis', emoji: '🥄', tag: 'Zero Açúcar', tagStyle: TAG.fresh, bg: 'from-amber-100 to-[#D9A86C]' },
+      { name: 'Granola Sem Açúcar', spec: 'R$ 3,90 / 100g', price: 'A granel', cat: 'saudaveis', emoji: '🥣', tag: 'Fresco da Semana', tagStyle: TAG.fresh, bg: 'from-[#FBF7EF] to-amber-100' }
+    ];
+
+    /* ---------- Referências DOM ---------- */
+    const $tabs = document.getElementById('tabs');
+    const $grid = document.getElementById('product-grid');
+
+    /* Escapa texto para inserção segura em HTML */
+    const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+    /* ---------- Render das abas ---------- */
+    $tabs.innerHTML = TABS.map((t) => `
+      <button type="button" role="tab" id="tab-${t.id}" data-tab="${t.id}" aria-selected="false" aria-controls="product-grid"
+        class="snap-start shrink-0 whitespace-nowrap min-h-[48px] px-5 rounded-full border text-sm font-semibold transition
+               focus:outline-none focus-visible:ring-4 focus-visible:ring-amber/60">
+        ${t.label}
+      </button>`).join('');
+
+    /* ---------- Render de um card ---------- */
+    const cardHTML = (p, i) => `
+      <article class="card-in group flex flex-col bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-100 hover:shadow-soft transition" style="animation-delay:${i * 40}ms">
+        <div class="relative aspect-square bg-gradient-to-br ${p.bg} grid place-items-center">
+          <span class="text-6xl sm:text-7xl group-hover:scale-110 transition duration-300" role="img" aria-label="${esc(p.name)}">${p.emoji}</span>
+          <span class="absolute top-2 left-2 sm:top-3 sm:left-3 text-[10px] sm:text-xs font-bold uppercase tracking-wide rounded-full px-2.5 py-1 ${p.tagStyle}">${esc(p.tag)}</span>
+        </div>
+        <div class="flex flex-col flex-1 p-3 sm:p-5">
+          <h3 class="font-bold text-forest text-sm sm:text-base leading-snug">${esc(p.name)}</h3>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">${esc(p.spec)}</p>
+          <p class="text-amber-600 font-extrabold mt-2 text-sm sm:text-base">${esc(p.price)}</p>
+          <a href="${productLink(`${p.name} (${p.spec})`)}" target="_blank" rel="noopener"
+             class="mt-auto pt-3 sm:pt-4">
+            <span class="flex items-center justify-center gap-2 w-full bg-wa hover:bg-wa-dark text-white font-bold text-xs sm:text-sm min-h-[48px] rounded-xl transition active:scale-[.98]">
+              <svg class="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true"><use href="#i-wa"/></svg>
+              Pedir no WhatsApp
+            </span>
+          </a>
+        </div>
+      </article>`;
+
+    /* ---------- Filtro dinâmico (sem recarregar) ---------- */
+    function setTab(id, { scrollToGrid = false } = {}) {
+      const list = id === 'mais-pedidos' ? PRODUCTS.filter((p) => p.top) : PRODUCTS.filter((p) => p.cat === id);
+      $grid.innerHTML = list.map(cardHTML).join('');
+      $grid.setAttribute('aria-labelledby', `tab-${id}`);
+
+      $tabs.querySelectorAll('[role="tab"]').forEach((btn) => {
+        const active = btn.dataset.tab === id;
+        btn.setAttribute('aria-selected', String(active));
+        btn.tabIndex = active ? 0 : -1;
+        btn.classList.toggle('bg-forest', active);
+        btn.classList.toggle('text-white', active);
+        btn.classList.toggle('border-forest', active);
+        btn.classList.toggle('bg-white', !active);
+        btn.classList.toggle('text-forest', !active);
+        btn.classList.toggle('border-slate-200', !active);
+        if (active) btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      });
+
+      if (scrollToGrid) document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    $tabs.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-tab]');
+      if (btn) setTab(btn.dataset.tab);
+    });
+
+    /* Navegação por teclado entre abas (setas) — acessibilidade */
+    $tabs.addEventListener('keydown', (e) => {
+      if (!['ArrowRight', 'ArrowLeft'].includes(e.key)) return;
+      const btns = [...$tabs.querySelectorAll('[role="tab"]')];
+      const idx = btns.indexOf(document.activeElement);
+      const next = btns[(idx + (e.key === 'ArrowRight' ? 1 : -1) + btns.length) % btns.length];
+      next.focus(); setTab(next.dataset.tab);
+    });
+
+    /* Cards de segmentação → abrem a aba correspondente */
+    document.querySelectorAll('[data-goto]').forEach((el) =>
+      el.addEventListener('click', () => setTab(el.dataset.goto, { scrollToGrid: true })));
+
+    /* ---------- Links globais de WhatsApp ---------- */
+    document.querySelectorAll('[data-wa]').forEach((a) => { a.href = waLink(MESSAGES[a.dataset.wa] || MESSAGES.geral); });
+
+    /* ---------- Rotas (Google Maps / Waze) ---------- */
+    document.getElementById('btn-gmaps').href =
+      `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(CONFIG.address)}`;
+    document.getElementById('btn-waze').href =
+      `https://waze.com/ul?ll=${CONFIG.lat},${CONFIG.lng}&navigate=yes`;
+
+    /* ---------- Status "Aberto agora" (horário de São Paulo) ---------- */
+    (function openStatus() {
+      const el = document.getElementById('open-status');
+      const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Sao_Paulo', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false })
+        .formatToParts(new Date()).reduce((o, p) => (o[p.type] = p.value, o), {});
+      const mins = (parseInt(parts.hour, 10) % 24) * 60 + parseInt(parts.minute, 10);
+      const day = parts.weekday;
+      const open = (['Mon','Tue','Wed','Thu','Fri'].includes(day) && mins >= 480 && mins < 1140) ||
+                   (day === 'Sat' && mins >= 480 && mins < 840);
+      el.innerHTML = open
+        ? '<span class="w-2 h-2 rounded-full bg-wa animate-pulse"></span> Aberto agora'
+        : '<span class="w-2 h-2 rounded-full bg-red-500"></span> Fechado agora · pedidos pelo WhatsApp são respondidos na abertura';
+      el.className += open ? ' bg-forest-50 text-forest' : ' bg-red-50 text-red-700';
+    })();
+
+    /* ---------- Ano dinâmico no rodapé ---------- */
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* Inicializa catálogo */
+    setTab('mais-pedidos');
+  })();
+  </script>
+</body>
+</html>
