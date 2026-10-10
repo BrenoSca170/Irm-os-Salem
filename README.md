@@ -1,6 +1,6 @@
 # Irmãos Salem — Produtos Naturais e Suplementos
 
-Landing page mobile-first de alta conversão para a loja **Irmãos Salem** (Vila Carrão / Aricanduva — Zona Leste de São Paulo).
+Landing page mobile-first de alta conversão para a loja **Irmãos Salem** (R. Dona Matilde, 598 — Vila Matilde, Zona Leste de São Paulo).
 
 ## Stack
 - HTML5 semântico
